@@ -34,17 +34,24 @@ const TaskItem = ({
     }
   }
 
-  const formatDueDate = (dateString) => {
+const formatDueDate = (dateString) => {
     if (!dateString) return null
     
-    const date = parseISO(dateString)
-    const now = new Date()
-    
-    if (isToday(date)) return 'Today'
-    if (isTomorrow(date)) return 'Tomorrow'
-    if (isPast(date) && !isToday(date)) return `Overdue - ${format(date, 'MMM d')}`
-    
-    return format(date, 'MMM d')
+    try {
+      const date = parseISO(dateString)
+      if (isNaN(date.getTime())) return 'Invalid date'
+      
+      const now = new Date()
+      
+      if (isToday(date)) return 'Today'
+      if (isTomorrow(date)) return 'Tomorrow'
+      if (isPast(date) && !isToday(date)) return `Overdue - ${format(date, 'MMM d')}`
+      
+      return format(date, 'MMM d')
+    } catch (error) {
+      console.error('Date parsing error:', error, 'for date:', dateString)
+      return 'Invalid date'
+    }
   }
 
   const getPriorityColor = (priority) => {
@@ -56,7 +63,17 @@ const TaskItem = ({
     }
   }
 
-  const isOverdue = task.dueDate && isPast(parseISO(task.dueDate)) && !isToday(parseISO(task.dueDate)) && !task.completed
+const isOverdue = (() => {
+    if (!task?.dueDate || task?.completed) return false
+    try {
+      const date = parseISO(task.dueDate)
+      if (isNaN(date.getTime())) return false
+      return isPast(date) && !isToday(date)
+    } catch (error) {
+      console.error('Date parsing error in isOverdue:', error)
+      return false
+    }
+  })()
 
   return (
     <motion.div
