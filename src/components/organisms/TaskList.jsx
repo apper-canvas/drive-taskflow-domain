@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
-import React, { ErrorBoundary } from "react";
+import React from "react";
+import { ErrorBoundary } from "react-error-boundary";
 import TaskItem from "@/components/molecules/TaskItem";
 import ApperIcon from "@/components/ApperIcon";
 
