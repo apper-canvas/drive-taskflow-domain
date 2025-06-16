@@ -110,10 +110,10 @@ const QuickAddBar = ({ onAddTask, categories = [], className = '' }) => {
                   onChange={(e) => setCategoryId(e.target.value)}
                   className="w-full p-2 text-sm border border-gray-200 rounded-lg focus:outline-none focus:border-primary"
                 >
-                  <option value="">No category</option>
+<option value="">No category</option>
                   {categories.map(category => (
                     <option key={category.Id} value={category.Id}>
-                      {category.name}
+                      {category.Name || category.name}
                     </option>
                   ))}
                 </select>

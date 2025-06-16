@@ -36,9 +36,9 @@ const CategoryManager = ({
     setNewCategoryColor('#5B4EE9')
   }
 
-  const handleStartEdit = (category) => {
+const handleStartEdit = (category) => {
     setEditingId(category.Id)
-    setEditName(category.name)
+    setEditName(category.Name || category.name)
     setEditColor(category.color)
   }
 
@@ -193,8 +193,8 @@ const CategoryManager = ({
                             <div 
                               className="w-4 h-4 rounded-full"
                               style={{ backgroundColor: category.color }}
-                            />
-                            <span className="font-medium">{category.name}</span>
+/>
+                            <span className="font-medium">{category.Name || category.name}</span>
                             <Badge size="sm" variant="default">
                               {category.taskCount} tasks
                             </Badge>
