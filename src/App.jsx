@@ -4,6 +4,8 @@ import Layout from './Layout'
 import { routes } from './config/routes'
 
 function App() {
+  const DefaultComponent = routes[0].component;
+  
   return (
     <BrowserRouter>
       <Routes>
@@ -15,7 +17,7 @@ function App() {
               element={<route.component />} 
             />
           ))}
-          <Route index element={<routes[0].component />} />
+          <Route index element={<DefaultComponent />} />
         </Route>
       </Routes>
       <ToastContainer
