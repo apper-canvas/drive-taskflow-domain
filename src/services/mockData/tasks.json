@@ -1,0 +1,57 @@
+[
+  {
+    "Id": 1,
+    "title": "Review quarterly marketing strategy presentation",
+    "completed": false,
+    "priority": "high",
+    "categoryId": 1,
+    "dueDate": "2024-12-18T09:00:00.000Z",
+    "createdAt": "2024-12-15T10:30:00.000Z",
+    "completedAt": null,
+    "archived": false
+  },
+  {
+    "Id": 2,
+    "title": "Schedule team meeting for project kickoff",
+    "completed": true,
+    "priority": "medium",
+    "categoryId": 1,
+    "dueDate": "2024-12-16T14:00:00.000Z",
+    "createdAt": "2024-12-14T16:20:00.000Z",
+    "completedAt": "2024-12-16T13:45:00.000Z",
+    "archived": false
+  },
+  {
+    "Id": 3,
+    "title": "Update portfolio website with latest projects",
+    "completed": false,
+    "priority": "low",
+    "categoryId": 2,
+    "dueDate": "2024-12-22T17:00:00.000Z",
+    "createdAt": "2024-12-13T11:15:00.000Z",
+    "completedAt": null,
+    "archived": false
+  },
+  {
+    "Id": 4,
+    "title": "Buy groceries for weekend dinner party",
+    "completed": false,
+    "priority": "medium",
+    "categoryId": 3,
+    "dueDate": "12/17/2024 6:00:00 PM.000Z",
+    "createdAt": "2024-12-15T12:00:00.000Z",
+    "completedAt": null,
+    "archived": false
+  },
+  {
+    "Id": 5,
+    "title": "Complete expense reports for November",
+    "completed": false,
+    "priority": "high",
+    "categoryId": 1,
+    "dueDate": "2024-12-16T23:59:00.000Z",
+    "createdAt": "2024-12-12T09:45:00.000Z",
+    "completedAt": null,
+    "archived": false
+  }
+]
